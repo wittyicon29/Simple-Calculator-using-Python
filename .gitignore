@@ -127,3 +127,57 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+add=lambda x,y: x+y
+subtract=lambda x,y: x-y
+multiply=lambda x,y: x*y
+divide=lambda x,y: x/y
+import math
+from math import sin
+sine=lambda x: round(math.sin(math.radians(x)),1)
+from math import cos
+cosine=lambda x: round(math.cos(math.radian(x)),1)
+from math import tan
+tan=lambda x: round(math.tan(math.radians(x)),1)
+from math import log10
+log=lambda x: log10(x)
+print("Select operation.")
+print("1. +")
+print("2. -")
+print("3. ×")
+print("4. ÷")
+print("5. sin")
+print("6. cos")
+print("7. tan")
+print("8. Log")
+
+while True:
+       choice=input("Enter choice(1/2/3/4/5/6/7/8): ")
+
+       if choice in ('1','2','3','4','5','6','7','8'):
+          x=float(input("Enter first number "))
+          y=float(input("Enter second number "))
+
+          if choice=='1':
+             print(x,"+",y,"=",add(x,y))
+          elif choice=='2':
+               print(x,"-",y,"=",subtract(x,y))
+          elif choice=='3':
+               print(x,"×",y,"=",multiply(x,y))
+          elif choice=='4':
+               print(x,"÷",y,"=",divide(x,y))
+          elif choice=='5':
+               print("sin(x)",sine(x))
+          elif choice=='6':
+               print("cos(x)",cosine(x))
+          elif choice=='7':
+               print("tan(x)",tan(x))
+          elif choice=='8':
+               print("log(x)",log10(x))
+
+          next_calculation=input("Let's do another calculation (Yes/No)? ")
+          if next_calculation =="No":
+             break
+       else:
+            print("Invalid input")
